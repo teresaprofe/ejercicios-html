@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SMR - Iniciar sesión</title>
+</head>
+<body>
+	<h1>Hello world</h1>
+	<main>
+		<h2>SMR</h2>
+		<h3>Iniciar sesión</h3>
+		<form id="login-form">
+			<div>
+				<label for="correo">Correo electrónico</label>
+				<input type="email" id="correo" name="correo" autocomplete="username" required>
+			</div>
+			<div>
+				<label for="contrasena">Contraseña</label>
+				<input type="password" id="contrasena" name="contrasena" autocomplete="current-password" required>
+			</div>
+			<button type="submit">Entrar</button>
+		</form>
+	</main>
+	<script>
+		document.getElementById("login-form").addEventListener("submit", function (event) {
+			event.preventDefault();
+			window.location.href = "bienvenida.html";
+		});
+	</script>
+</body>
+</html>

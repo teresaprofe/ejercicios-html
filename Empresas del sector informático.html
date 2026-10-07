@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Empresas del sector informático</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#16222e;--muted:#5b6b7a;--line:#dbe2e8;--tint:#e3eff4;--accent:#0f6e8c;--accent-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f161d;--card:#18222c;--ink:#e8eef3;--muted:#98a8b6;--line:#2a3945;--tint:#1f303c;--accent:#5cc3e3;--accent-ink:#0a1a22}}
+:root[data-theme="dark"]{--bg:#0f161d;--card:#18222c;--ink:#e8eef3;--muted:#98a8b6;--line:#2a3945;--tint:#1f303c;--accent:#5cc3e3;--accent-ink:#0a1a22}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding:40px 20px 56px}
+h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0 0 10px}
+.intro{color:var(--muted);max-width:60ch;margin:0 0 32px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.card h2{margin:0;font-size:22px;font-weight:800}
+.tag{color:var(--accent);font-weight:600;font-size:15px;margin:0}
+.card p{margin:0}
+dl{margin:0;display:grid;gap:8px;font-size:15px}
+dt{color:var(--muted);font-size:14px}
+dd{margin:0}
+.card a{margin-top:auto;display:inline-block;text-align:center;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:800;padding:12px 18px;border-radius:10px}
+.card a:hover{filter:brightness(1.1)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+svg.art{display:block;width:100%;height:auto;border-radius:10px;background:var(--tint);fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+svg.art .f{fill:var(--accent);stroke:none}
+footer{margin-top:36px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Empresas del sector informático</h1>
+  <p class="intro">Las tres empresas analizadas en la Tarea 1.1 de Proyecto Intermodular (SMR2 Tarde). Abre la web de cada una desde su tarjeta.</p>
+
+  <div class="grid">
+    <article class="card">
+      <svg class="art" viewBox="0 0 300 140" role="img" aria-label="Torre de ordenador conectada a un switch de red"><rect x="40" y="20" width="60" height="100" rx="6"/><circle cx="70" cy="40" r="6"/><path d="M52 66h36M52 78h36M52 90h36"/><path d="M100 100h30v-22"/><rect x="130" y="50" width="130" height="30" rx="5"/><rect class="f" x="142" y="60" width="12" height="10" rx="2"/><rect class="f" x="162" y="60" width="12" height="10" rx="2"/><rect class="f" x="182" y="60" width="12" height="10" rx="2"/><rect class="f" x="202" y="60" width="12" height="10" rx="2"/><rect class="f" x="222" y="60" width="12" height="10" rx="2"/><path d="M196 80v22M196 102h60"/></svg>
+      <h2>Approx Iberia S.L.</h2>
+      <p class="tag">Periféricos y componentes informáticos</p>
+      <dl>
+        <div><dt>Localización</dt><dd>Gelves (Sevilla)</dd></div>
+        <div><dt>Actividad</dt><dd>Fabricación, importación y distribución mayorista de accesorios, componentes y elementos de red.</dd></div>
+        <div><dt>Empleados</dt><dd>Unos 11</dd></div>
+      </dl>
+      <a href="https://approx.es" target="_blank" rel="noopener noreferrer">Visitar approx.es</a>
+    </article>
+
+    <article class="card">
+      <svg class="art" viewBox="0 0 300 140" role="img" aria-label="Pantalla profesional con altavoz de audio"><rect x="50" y="22" width="120" height="76" rx="6"/><path d="M110 98v18M86 118h48"/><path class="f" d="M98 46l28 14-28 14z"/><rect x="200" y="34" width="46" height="84" rx="8"/><circle cx="223" cy="56" r="7"/><circle cx="223" cy="94" r="14"/></svg>
+      <h2>Exertis ProAV</h2>
+      <p class="tag">Distribución de audiovisual profesional e IT</p>
+      <dl>
+        <div><dt>Localización</dt><dd>España (delegaciones y centros logísticos)</dd></div>
+        <div><dt>Actividad</dt><dd>Mayorista de audio y vídeo profesional, señalización digital, conectividad y domótica.</dd></div>
+        <div><dt>Empleados</dt><dd>Más de 200 en España</dd></div>
+      </dl>
+      <a href="https://shop.exertis.es" target="_blank" rel="noopener noreferrer">Visitar shop.exertis.es</a>
+    </article>
+
+    <article class="card">
+      <svg class="art" viewBox="0 0 300 140" role="img" aria-label="Factura electrónica enviada a la nube"><rect x="40" y="18" width="70" height="104" rx="6"/><path d="M54 40h42M54 58h42M54 76h24"/><path d="M80 98l8 8 16-18"/><path d="M122 70h40M152 60l10 10-10 10"/><path d="M190 100a20 20 0 0 1 2-39 28 28 0 0 1 54 6 17 17 0 0 1-2 33z"/></svg>
+      <h2>Ceroone</h2>
+      <p class="tag">Consultoría IT y automatización</p>
+      <dl>
+        <div><dt>Localización</dt><dd>España</dd></div>
+        <div><dt>Actividad</dt><dd>Digitalización empresarial, factura electrónica, automatización de procesos e integración en la nube.</dd></div>
+        <div><dt>Empleados</dt><dd>Entre 1 y 3</dd></div>
+      </dl>
+      <a href="https://ceroone.com" target="_blank" rel="noopener noreferrer">Visitar ceroone.com</a>
+    </article>
+  </div>
+
+  <footer>Trabajo de Marcos Cabello García y Mirian Tirado Domínguez.</footer>
+</div>
+</body>
+</html>

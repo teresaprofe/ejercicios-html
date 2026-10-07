@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Introducción a HTML y CSS</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1c2321;--muted:#5d6a66;--line:#dcd8cc;--accent:#0b7a5a;--accent-ink:#fff;--code:#14201c;--code-ink:#d8efe6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101614;--card:#18211e;--ink:#e6eeea;--muted:#9aaba5;--line:#2b3a35;--accent:#4fd1a3;--accent-ink:#06231a;--code:#0b100e;--code-ink:#d8efe6}}
+:root[data-theme="dark"]{--bg:#101614;--card:#18211e;--ink:#e6eeea;--muted:#9aaba5;--line:#2b3a35;--accent:#4fd1a3;--accent-ink:#06231a;--code:#0b100e;--code-ink:#d8efe6}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.55}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 18px 56px}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;line-height:1.1}
+.sub{color:var(--muted);margin:0 0 22px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+nav button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;font-weight:600;text-align:left}
+nav button[aria-current="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.lesson h2{margin:0 0 10px;font-size:26px}
+.lesson p{margin:0 0 12px;max-width:68ch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em;background:color-mix(in srgb,var(--accent) 14%,transparent);padding:1px 5px;border-radius:5px}
+pre{background:var(--code);color:var(--code-ink);padding:14px;border-radius:10px;overflow-x:auto;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:0 0 14px}
+.reto{border-left:4px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:10px 14px;border-radius:0 10px 10px 0;margin:6px 0 16px}
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.lab{grid-template-columns:1fr}}
+.lab h3{margin:0 0 6px;font-size:15px;color:var(--muted)}
+textarea{width:100%;height:260px;resize:vertical;background:var(--code);color:var(--code-ink);border:0;border-radius:10px;padding:12px;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;tab-size:2}
+#prev{height:260px;overflow:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+.row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.row button{font:inherit;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 14px;border-radius:10px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Introducción a HTML y CSS</h1>
+  <p class="sub">Cuatro lecciones cortas con un editor en vivo: escribe el código a la izquierda y mira el resultado a la derecha.</p>
+  <nav id="nav" aria-label="Lecciones"></nav>
+  <section class="lesson" id="lesson"></section>
+</div>
+<script>
+const L=[
+{t:"1. La estructura de una página",
+ e:`<p><b>HTML</b> es el lenguaje que describe el contenido de una página: títulos, párrafos, listas, enlaces... Cada elemento se escribe con <b>etiquetas</b>: una de apertura <code>&lt;p&gt;</code> y una de cierre <code>&lt;/p&gt;</code>.</p>
+ <p>Todo documento HTML tiene siempre este esqueleto:</p>
+ <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Título de la pestaña&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...aquí va lo que se ve en pantalla...
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+ <p>En el editor de abajo escribes solo el contenido del <code>&lt;body&gt;</code>.</p>`,
+ r:"Añade un segundo párrafo con tu nombre y cambia el título por el de tu ciclo formativo.",
+ c:`<h1>Mi primera página</h1>
+<p>Hola, soy alumno de SMR.</p>`},
+{t:"2. Texto, listas y enlaces",
+ e:`<p>Las etiquetas más usadas para dar forma al contenido:</p>
+ <p><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> títulos · <code>&lt;p&gt;</code> párrafo · <code>&lt;strong&gt;</code> negrita · <code>&lt;em&gt;</code> cursiva · <code>&lt;ul&gt;</code> y <code>&lt;li&gt;</code> lista · <code>&lt;a href="..."&gt;</code> enlace · <code>&lt;img src="..." alt="..."&gt;</code> imagen.</p>
+ <p>Algunas etiquetas llevan <b>atributos</b>, como <code>href</code> en los enlaces: indican la dirección a la que lleva el enlace. En las imágenes, <code>alt</code> describe la foto para quien no puede verla.</p>`,
+ r:"Crea una lista con los módulos de tu ciclo y un enlace a la web de tu centro.",
+ c:`<h2>Módulos de SMR</h2>
+<ul>
+  <li>Montaje y mantenimiento de equipos</li>
+  <li>Redes locales</li>
+</ul>
+<p>Más información en <a href="https://example.com">esta página</a>.</p>`},
+{t:"3. CSS: dar estilo",
+ e:`<p><b>CSS</b> decide el aspecto del HTML: colores, tipos de letra, tamaños. Una regla tiene un <b>selector</b> (qué elementos) y unas <b>propiedades</b> (qué cambia):</p>
+ <pre>p {
+  color: darkgreen;
+  font-size: 18px;
+}</pre>
+ <p>Hay tres selectores básicos: por etiqueta (<code>p</code>), por clase (<code>.destacado</code>, se aplica con <code>class="destacado"</code>) y por identificador (<code>#cabecera</code>). El CSS se escribe dentro de una etiqueta <code>&lt;style&gt;</code>.</p>`,
+ r:"Cambia el color del título, y aplica la clase destacado a otro párrafo.",
+ c:`<style>
+  h1 { color: teal; }
+  p { font-size: 18px; }
+  .destacado {
+    background: gold;
+    padding: 6px;
+  }
+</style>
+<h1>Hola CSS</h1>
+<p class="destacado">Este párrafo está destacado.</p>
+<p>Este es normal.</p>`},
+{t:"4. El modelo de caja",
+ e:`<p>Cada elemento es una caja formada por capas, de dentro hacia fuera:</p>
+ <p><b>contenido</b> → <code>padding</code> (espacio interior) → <code>border</code> (borde) → <code>margin</code> (espacio exterior).</p>
+ <pre>.caja {
+  width: 200px;
+  padding: 16px;
+  border: 3px solid black;
+  margin: 20px;
+}</pre>`,
+ r:"Crea dos cajas con distinto padding y margin y observa cómo cambia la separación.",
+ c:`<style>
+  .caja {
+    width: 200px;
+    padding: 16px;
+    border: 3px solid #333;
+    margin: 20px;
+    background: lightyellow;
+  }
+</style>
+<div class="caja">Soy una caja</div>`}
+];
+const nav=document.getElementById('nav'),box=document.getElementById('lesson');
+const shadow=null;
+function show(i){
+  [...nav.children].forEach((b,j)=>b.setAttribute('aria-current',j===i));
+  const l=L[i];
+  box.innerHTML=`<h2>${l.t}</h2>${l.e}<div class="reto"><b>Reto:</b> ${l.r}</div>
+  <div class="lab"><div><h3>Código</h3><textarea id="ed" spellcheck="false" aria-label="Editor de código"></textarea></div>
+  <div><h3>Resultado</h3><div id="prev"></div></div></div>
+  <div class="row"><button id="rs">Restaurar código</button></div>`;
+  const ed=document.getElementById('ed'),root=document.getElementById('prev').attachShadow({mode:'open'});
+  const render=()=>{root.innerHTML='<style>:host{all:initial}.b{font-family:system-ui,sans-serif;color:#111;padding:12px;background:#fff;min-height:100%}</style><div class="b">'+ed.value+'</div>'};
+  ed.value=l.c;render();
+  ed.addEventListener('input',render);
+  document.getElementById('rs').onclick=()=>{ed.value=l.c;render()};
+}
+L.forEach((l,i)=>{const b=document.createElement('button');b.textContent=l.t;b.onclick=()=>show(i);nav.appendChild(b)});
+show(0);
+</script>
+</body>
+</html>
